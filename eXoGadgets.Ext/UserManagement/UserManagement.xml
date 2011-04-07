@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+
+    Copyright (C) 2009 eXo Platform SAS.
+    
+    This is free software; you can redistribute it and/or modify it
+    under the terms of the GNU Lesser General Public License as
+    published by the Free Software Foundation; either version 2.1 of
+    the License, or (at your option) any later version.
+    
+    This software is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+    Lesser General Public License for more details.
+    
+    You should have received a copy of the GNU Lesser General Public
+    License along with this software; if not, write to the Free
+    Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+    02110-1301 USA, or see the FSF site: http://www.fsf.org.
+
+-->
+<!--
+ **
+ * Created by The eXo Platform SEA
+ * Author : kien.nguyen
+ *          nguyenanhkien2a@gmail.com
+ * Jul 14, 2010          
+ *
+-->
+<Module>
+   <ModulePrefs author="eXoPlatform"
+                title="User Management"
+                directory_title="User Management"
+                title_url="http://www.exoplatform.org"
+                description="User Management"
+                thumbnail="http://localhost:8080/eXoGadgets.Ext/skin/DefaultSkin/portletIcons/UserManagement.png"                
+                height="227">
+      <Locale lang="ar" language_direction="rtl"/>
+      <Require feature="views"/>
+   </ModulePrefs>
+   <Content type="html" view="home">
+      <![CDATA[         
+     <link rel="stylesheet" type="text/css" href="style/style.css"></link>
+     <script type="text/javascript" src="../ext-libs/jquery-1.4.2.min.js"></script>
+      <script type="text/javascript" src="script.js"></script>
+      <script type="text/javascript" src="handlers.js"></script>
+    <script type="text/javascript">      
+      gadgets.util.registerOnLoadHandler(eXo.gadget.UserManagement.init);      
+    </script>
+    <body>
+      <div id="UserManagement" class="UserManagement">
+        <div class="UIGrid">
+          <table id="plTable" cellspacing="0" style="width:100%;text-align: left;">
+            <thead>
+              <tr>         
+                        <th style="width:50%">User Name</th>                                                    
+                        <th style="width:50%">Action</th>                   
+               </tr>
+            </thead>
+            <tbody id="UserList">
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </body>
+  ]]>
+   </Content>
+   
+   <Content type="html" view="canvas">
+      <![CDATA[         
+     <link rel="stylesheet" type="text/css" href="style/style.css"></link>
+     <script type="text/javascript" src="../ext-libs/jquery-1.4.2.min.js"></script>
+      <script type="text/javascript" src="script.js"></script>
+      <script type="text/javascript" src="handlers.js"></script>
+    <script type="text/javascript">      
+      gadgets.util.registerOnLoadHandler(eXo.gadget.UserManagement.init);      
+    </script>
+    <body>
+      <div class="UISearchForm" id="UISearchForm">
+        <input id="SearchInput" class="SearchInput" type="text">
+        <select class="SearchType" id="SearchType">
+          <option>User Name</option>
+          <option>Last Name</option>
+          <option>First Name</option>
+          <option>Email</option>
+        </select>
+        <input type="button" id="SearchUser" value="Search">           
+      </div>
+      <div id="UserManagement" class="UserManagement">
+        <div class="UIGrid">
+          <table id="plTable" cellspacing="0" style="width:100%; text-align: left;">
+            <thead>
+              <tr>         
+                        <th style="width:20%">User Name</th>    
+                        <th style="width:20%">Last Name</th>                 
+                        <th style="width:20%">First Name</th>                  
+                        <th style="width:20%">Email</th>                    
+                        <th style="width:20%">Action</th>                   
+               </tr>
+            </thead>
+            <tbody id="UserList">
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </body>
+  ]]>
+   </Content>
+</Module>
