@@ -21,8 +21,8 @@ eXo = {
 };
 
 function PageManagement() {
-  this.PAGE_QUERY_URL = "http://localhost:8080/rest/private/dataManager/query/pages";  
-  this.PAGE_DELETE_URL = "http://localhost:8080/rest/private/dataManager/delete/pages";
+  this.PAGE_QUERY_URL = "http://localhost:8080/rest/private/page/query";  
+  this.PAGE_DELETE_URL = "http://localhost:8080/rest/private/page/delete";
 }
 
 PageManagement.prototype.init = function() {

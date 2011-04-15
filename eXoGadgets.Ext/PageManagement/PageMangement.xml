@@ -41,9 +41,9 @@
    <Content type="html" view="home">
       <![CDATA[    
      <link rel="stylesheet" type="text/css" href="style/style.css"></link>
-     <script type="text/javascript" src="../ext-libs/jquery-1.4.2.min.js"></script>
-      <script type="text/javascript" src="script.js"></script>
-      <script type="text/javascript" src="handlers.js"></script>
+     <script type="text/javascript" src="script/jquery-1.4.2.min.js"></script>
+      <script type="text/javascript" src="script/script.js"></script>
+      <script type="text/javascript" src="script/handlers.js"></script>
     <script type="text/javascript">      
       gadgets.util.registerOnLoadHandler(eXo.gadget.PageManagement.init);      
     </script>
@@ -69,9 +69,9 @@
    <Content type="html" view="canvas">
       <![CDATA[     
      <link rel="stylesheet" type="text/css" href="style/style.css"></link>
-     <script type="text/javascript" src="../ext-libs/jquery-1.4.2.min.js"></script>
-      <script type="text/javascript" src="script.js"></script>
-    <script type="text/javascript" src="handlers.js"></script>
+     <script type="text/javascript" src="script/jquery-1.4.2.min.js"></script>
+      <script type="text/javascript" src="script/script.js"></script>
+    <script type="text/javascript" src="script/handlers.js"></script>
     <script type="text/javascript">      
       gadgets.util.registerOnLoadHandler(eXo.gadget.PageManagement.init);      
     </script>

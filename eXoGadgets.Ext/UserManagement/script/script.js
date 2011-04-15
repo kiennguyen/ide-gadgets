@@ -22,8 +22,8 @@ eXo = {
 };
 
 function UserManagement() {
-  this.USER_QUERY_URL = "http://localhost:8080/rest/private/dataManager/find/users";  
-  this.USER_DELETE_URL = "http://localhost:8080/rest/private/dataManager/delete/users";
+  this.USER_QUERY_URL = "http://localhost:8080/rest/private/user/query";  
+  this.USER_DELETE_URL = "http://localhost:8080/rest/private/user/delete";
 }
 
 UserManagement.prototype.init = function() {
