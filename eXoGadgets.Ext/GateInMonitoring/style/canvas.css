@@ -141,7 +141,7 @@ a {
 }
 
 .GadgetGrid .GadgetStyle .ButtonRight {
-  background: url("./../images/GadgetStyle.gif") no-repeat right top;
+  background: url("./images/GadgetStyle.gif") no-repeat right top;
   padding-right: 2px;
 }
 

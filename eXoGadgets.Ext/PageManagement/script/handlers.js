@@ -54,7 +54,7 @@ PageManagement.prototype.makeRequest = function(reqUrl, callback, sendData, retu
             type: reqMethod,            
             success: callback,
             contentType: "application/x-www-form-urlencoded",
-            error: function() {alert("error");},
+            error: function() {$("#PageList").html("Cannot load Page data from service!");},
             data: sendData,
             dataType: returnType                              
           });

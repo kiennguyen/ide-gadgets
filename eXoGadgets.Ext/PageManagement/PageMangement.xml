@@ -58,6 +58,7 @@
                </tr>
             </thead>
             <tbody id="PageList">
+	       <tr><td>Loading Page data ...</td></tr>
             </tbody>
           </table>
         </div>
@@ -97,6 +98,7 @@
                </tr>
             </thead>
             <tbody id="PageList">
+	       <tr><td>Loading Page data ...</td></tr>
             </tbody>
           </table>
         </div>
