@@ -21,11 +21,13 @@ eXo = {
 };
 
 function GateInMonitoring() {
-	this.SERVICES_URL = "http://localhost:8080/portal/rest/management";
 }
 
 GateInMonitoring.prototype.init = function() {
 	var monitor = eXo.gadget.GateInMonitoring;
+	var prefs = new _IG_Prefs();
+	monitor.SERVICES_URL = prefs.getString("servicesURL");
+	
 	monitor.registerHandler();
 	monitor.makeRequest(monitor.SERVICES_URL, monitor.renderServiceSelector);
 };

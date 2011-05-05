@@ -74,6 +74,9 @@ GateInMonitoring.prototype.registerHandler = function() {
  * @return XMLHttpRequest object
  */
 GateInMonitoring.prototype.makeRequest = function(reqUrl, callback, sendData, returnType, reqMethod) {	
+	if (reqUrl == "") {
+		return;
+	}
 	reqMethod = reqMethod ? reqMethod : "GET";
 	returnType = returnType ? returnType : "json";
 	
@@ -82,7 +85,7 @@ GateInMonitoring.prototype.makeRequest = function(reqUrl, callback, sendData, re
 					  type: reqMethod,					  
 					  success: callback,
 					  contentType: "application/x-www-form-urlencoded",
-					  error: function() {alert("error");},
+					  error: function() {},
 					  data: sendData,
 					  dataType: returnType,
 					  beforeSend: function(xhr) {
