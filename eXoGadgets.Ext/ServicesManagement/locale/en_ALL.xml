@@ -23,7 +23,7 @@
   <msg name="title">
   	Services Management
   </msg>
-  <msg name="services_label">
+  <msg name="services">
   	Services
   </msg>
   <msg name="name">
