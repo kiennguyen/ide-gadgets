@@ -28,19 +28,21 @@
  *
 -->
 <Module>
-   <ModulePrefs author="eXoPlatform"
-                title="Services Management"
+   <ModulePrefs author="eXoPlatform Portal team"
+                title="__MSG_title__"
                 directory_title="Services Management"
                 title_url="http://www.exoplatform.org"
                 description="Services Management"
                 thumbnail="style/images/ServicesManagement.png"                
                 height="227">
-      <Locale lang="ar" language_direction="rtl"/>
+      <Locale messages="locale/ALL_ALL.xml">
+      <Locale lang="fr" messages="locale/fr_ALL.xml">
+      <Locale lang="vi" messages="locale/vi_ALL.xml">
       <Require feature="dynamic-height"/>
       <Require feature="minimessage"/>
       <Require feature="views"/>
    </ModulePrefs>
-   <UserPref name="servicesURL" display_name="Services URL" default_value="/portal/rest/management" required="true"/>
+   <UserPref name="servicesURL" display_name="__MSG_services_url__" default_value="/portal/rest/management" required="true"/>
    <Content type="html" view="home">
       <![CDATA[
         <link rel="stylesheet" type="text/css" href="style/home.css"></link>
@@ -55,13 +57,13 @@
 			  <div class="TopGadget">
 				<table cellspacing="0">
 					<tr>
-						<td><div class="Text">GateIn Service</div></td>
+						<td><div class="Text">__MSG_services__</div></td>
 						<td>
 							<select id="servicesSelector"></select>							
 						</td>
 					</tr>
 					<tr>
-						<td><div class="Text">Method</div></td>
+						<td><div class="Text">__MSG_method__</div></td>
 						<td>
 							<select id="methodsSelector"></select>							
 						</td>
@@ -73,8 +75,8 @@
 				<table cellspacing="0" class="UIGrid">
 					<thead>
 						<tr>
-							<th class="TableHeader FieldComponent Text">Name</th>
-							<th class="TableHeader Text">Value</th>
+							<th class="TableHeader FieldComponent Text">__MSG_name__</th>
+							<th class="TableHeader Text">__MSG_value__</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -120,7 +122,7 @@
 				<table cellspacing="0" style="margin: 0px auto;">
 					<tbody>
 						<tr>
-							<td><div class="Text">GateIn Service</div></td>
+							<td><div class="Text">__MSG_services__</div></td>
 							<td>
 								<select id="servicesSelector"></select>							
 							</td>
@@ -133,10 +135,10 @@
 				<table cellspacing="0" class="UIGrid">
 					<thead>
 						<tr>
-							<th class="FieldComponent">Name</th>
-							<th class="FieldComponent">Method</th>
-							<th class="FieldComponent">Parameters</th>
-							<th>Action</th>
+							<th class="FieldComponent">__MSG_name__</th>
+							<th class="FieldComponent">__MSG_method__</th>
+							<th class="FieldComponent">__MSG_parameters__</th>
+							<th>__MSG_action__</th>
 						</tr>
 					</thead>
 					<tbody id="methodsForCanvas"></tbody>

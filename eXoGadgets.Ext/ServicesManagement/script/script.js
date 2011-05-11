@@ -129,7 +129,7 @@ ServicesManagement.prototype.renderMethodsForCanvas = function(methodData) {
 		methodForCanvas += "</form></td>" + "<td>"
 				+ "<div class='ActionButton GadgetStyle FL'>"
 				+ "<div class='ButtonLeft'>" + "<div class='ButtonRight'>"
-				+ "<div class='ButtonMiddle'>" + "<a href='#'>Execute</a>" + "</div>"
+				+ "<div class='ButtonMiddle'>" + "<a href='#'>Run</a>" + "</div>"
 				+ "</div>" + "</div>" + "</div>" + "</td></tr>";
 
 	}
