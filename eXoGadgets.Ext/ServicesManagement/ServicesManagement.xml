@@ -29,11 +29,11 @@
 -->
 <Module>
    <ModulePrefs author="eXoPlatform"
-                title="GateIn Monitoring"
-                directory_title="GateIn Monitoring"
+                title="Services Management"
+                directory_title="Services Management"
                 title_url="http://www.exoplatform.org"
-                description="GateIn Monitoring"
-                thumbnail="http://localhost:8080/eXoGadgets.Ext/skin/DefaultSkin/portletIcons/GateInMonitoring.png"                
+                description="Services Management"
+                thumbnail="style/images/ServicesManagement.png"                
                 height="227">
       <Locale lang="ar" language_direction="rtl"/>
       <Require feature="dynamic-height"/>
@@ -48,7 +48,7 @@
 		<script src="script/script.js" type="text/javascript"></script>	
 		<script src="script/handlers.js" type="text/javascript"></script>
 		<script type="text/javascript">
-			gadgets.util.registerOnLoadHandler(eXo.gadget.GateInMonitoring.init);			
+			gadgets.util.registerOnLoadHandler(eXo.gadget.ServicesManagement.init);			
 		</script>
 		<body>
 			<div class="UIGadget">
@@ -111,7 +111,7 @@
 		<script src="script/script.js"></script>
 		<script src="script/handlers.js"></script>
 		<script type="text/javascript">
-			gadgets.util.registerOnLoadHandler(eXo.gadget.GateInMonitoring.init);
+			gadgets.util.registerOnLoadHandler(eXo.gadget.ServicesManagement.init);
 		</script>
 		<body>
 		

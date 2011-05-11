@@ -20,11 +20,11 @@ eXo = {
 	gadget : {}
 };
 
-function GateInMonitoring() {
+function ServicesManagement() {
 }
 
-GateInMonitoring.prototype.init = function() {
-	var monitor = eXo.gadget.GateInMonitoring;
+ServicesManagement.prototype.init = function() {
+	var monitor = eXo.gadget.ServicesManagement;
 	var prefs = new _IG_Prefs();
 	monitor.SERVICES_URL = prefs.getString("servicesURL");
 	
@@ -32,7 +32,7 @@ GateInMonitoring.prototype.init = function() {
 	monitor.makeRequest(monitor.SERVICES_URL, monitor.renderServiceSelector);
 };
 
-GateInMonitoring.prototype.renderServiceSelector = function(services) {
+ServicesManagement.prototype.renderServiceSelector = function(services) {
 	var servicesSelector = $("#servicesSelector");
 	var optionsHtml = "";
 
@@ -49,7 +49,7 @@ GateInMonitoring.prototype.renderServiceSelector = function(services) {
 	servicesSelector.change();
 };
 
-GateInMonitoring.prototype.renderMethodSelector = function(methodData) {
+ServicesManagement.prototype.renderMethodSelector = function(methodData) {
 	var methodSelector = $("#methodsSelector");
 	var optionsHtml = "";
 	var methods = null;
@@ -72,7 +72,7 @@ GateInMonitoring.prototype.renderMethodSelector = function(methodData) {
 	methodSelector.change();
 };
 
-GateInMonitoring.prototype.renderMethodDetail = function(method) {
+ServicesManagement.prototype.renderMethodDetail = function(method) {
 	if (!method) {
 		method = {
 			name : "",
@@ -98,10 +98,10 @@ GateInMonitoring.prototype.renderMethodDetail = function(method) {
 	}
 	paramTable += "</table>";
 	$("#parametersTable").html(paramTable);
-	eXo.gadget.GateInMonitoring.resetHeight();
+	eXo.gadget.ServicesManagement.resetHeight();
 };
 
-GateInMonitoring.prototype.renderMethodsForCanvas = function(methodData) {
+ServicesManagement.prototype.renderMethodsForCanvas = function(methodData) {
 	if (!methodData || !methodData.methods) {
 		return;
 	}
@@ -134,25 +134,25 @@ GateInMonitoring.prototype.renderMethodsForCanvas = function(methodData) {
 
 	}
 	$("#methodsForCanvas").html(methodForCanvas);
-	eXo.gadget.GateInMonitoring.resetHeight();
+	eXo.gadget.ServicesManagement.resetHeight();
 };
 
-GateInMonitoring.prototype.showMinimessage = function(jsonMessage) {
+ServicesManagement.prototype.showMinimessage = function(jsonMessage) {
 	var parsedObj;
 	try {
 		parsedObj = gadgets.json.parse(jsonMessage);
 	} catch (e) {
 		parsedObj = jsonMessage;
 	}
-	var htmlTable = $.trim(eXo.gadget.GateInMonitoring.objToTable(parsedObj));
+	var htmlTable = $.trim(eXo.gadget.ServicesManagement.objToTable(parsedObj));
 	if (htmlTable == "" || htmlTable == "empty object") {
 		htmlTable = "Method's executed, return no result";
 	}
 
-	var msg = new gadgets.MiniMessage("GateInMonitoring", document
+	var msg = new gadgets.MiniMessage("ServicesManagement", document
 			.getElementById("resultMessage"));
 	var executeMsg = msg.createDismissibleMessage(htmlTable, function() {
-		window.setTimeout(eXo.gadget.GateInMonitoring.resetHeight, 500);
+		window.setTimeout(eXo.gadget.ServicesManagement.resetHeight, 500);
 		return true;
 	});
 	
@@ -166,10 +166,10 @@ GateInMonitoring.prototype.showMinimessage = function(jsonMessage) {
 		$(this.parentNode).attr("style", "vertical-align: top");
 	});
 	
-	eXo.gadget.GateInMonitoring.resetHeight();
+	eXo.gadget.ServicesManagement.resetHeight();
 };
 
-GateInMonitoring.prototype.objToTable = function(obj) {
+ServicesManagement.prototype.objToTable = function(obj) {
 	var type = typeof (obj);
 	if (type != "object") {
 		return gadgets.util.escapeString(obj + "");
@@ -185,14 +185,14 @@ GateInMonitoring.prototype.objToTable = function(obj) {
 		for ( var i = 0; i < obj.length; i++) {
 			var rowClass = i % 2 == 0 ? "EvenRow" : "OddRow";
 			str += "<tr class='" + rowClass + "'><td><div class='Text'>";
-			str += eXo.gadget.GateInMonitoring.objToTable(obj[i]);
+			str += eXo.gadget.ServicesManagement.objToTable(obj[i]);
 			str += "</div></td></tr>";
 		}
 	} else {
 		str += "<tr>";
 		for ( var prop in obj) {
 			str += "<th>";
-			str += eXo.gadget.GateInMonitoring.objToTable(prop);
+			str += eXo.gadget.ServicesManagement.objToTable(prop);
 			str += "</th>";
 		}
 		str += "</tr>";
@@ -200,7 +200,7 @@ GateInMonitoring.prototype.objToTable = function(obj) {
 		str += "<tr>";
 		for ( var prop in obj) {
 			str += "<td>";
-			str += eXo.gadget.GateInMonitoring.objToTable(obj[prop]);
+			str += eXo.gadget.ServicesManagement.objToTable(obj[prop]);
 			str += "</td>";
 		}
 		str += "</tr>";
@@ -210,7 +210,7 @@ GateInMonitoring.prototype.objToTable = function(obj) {
 	return str;
 };
 
-GateInMonitoring.prototype.resetHeight = function() {
+ServicesManagement.prototype.resetHeight = function() {
 	if ($.browser.safari) {
 		gadgets.window.adjustHeight($(".UIGadget").height());
 	} else {
@@ -218,4 +218,4 @@ GateInMonitoring.prototype.resetHeight = function() {
 	}
 };
 
-eXo.gadget.GateInMonitoring = new GateInMonitoring();
+eXo.gadget.ServicesManagement = new ServicesManagement();

@@ -16,19 +16,19 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-GateInMonitoring.prototype.registerHandler = function() {
+ServicesManagement.prototype.registerHandler = function() {
 	
 	//======================Handler======================================//
 	$("#servicesSelector").change(function () {
 	  var serviceName = $(this).val();
 	  serviceName = gadgets.util.unescapeString(!serviceName ? "" : serviceName);
-	  var methodsURL = eXo.gadget.GateInMonitoring.SERVICES_URL + "/" + encodeURIComponent(serviceName);
+	  var methodsURL = eXo.gadget.ServicesManagement.SERVICES_URL + "/" + encodeURIComponent(serviceName);
 	  
 	  var currView = gadgets.views.getCurrentView().getName();
 	  if (currView == "home") {
-	  	eXo.gadget.GateInMonitoring.makeRequest(methodsURL, eXo.gadget.GateInMonitoring.renderMethodSelector);
+	  	eXo.gadget.ServicesManagement.makeRequest(methodsURL, eXo.gadget.ServicesManagement.renderMethodSelector);
 	  } else {
-	  	eXo.gadget.GateInMonitoring.makeRequest(methodsURL, eXo.gadget.GateInMonitoring.renderMethodsForCanvas);
+	  	eXo.gadget.ServicesManagement.makeRequest(methodsURL, eXo.gadget.ServicesManagement.renderMethodsForCanvas);
 	  }
 	});
 
@@ -46,7 +46,7 @@ GateInMonitoring.prototype.registerHandler = function() {
 		  }
 	  }
 
-	  eXo.gadget.GateInMonitoring.renderMethodDetail(method);
+	  eXo.gadget.ServicesManagement.renderMethodDetail(method);
 	});
 	
 	$('.ActionButton').live('click', function(event) {
@@ -58,10 +58,10 @@ GateInMonitoring.prototype.registerHandler = function() {
 	  serviceName = gadgets.util.unescapeString(!serviceName ? "" : serviceName);
 	  var param = $("form", tr).serialize();
 	  
-		var execLink = eXo.gadget.GateInMonitoring.SERVICES_URL + "/" + 
+		var execLink = eXo.gadget.ServicesManagement.SERVICES_URL + "/" + 
 												encodeURIComponent(serviceName) + "/" + 
 												encodeURIComponent(methodName);
-		eXo.gadget.GateInMonitoring.makeRequest(execLink, eXo.gadget.GateInMonitoring.showMinimessage, param, "text", reqMethod);
+		eXo.gadget.ServicesManagement.makeRequest(execLink, eXo.gadget.ServicesManagement.showMinimessage, param, "text", reqMethod);
 	});
 };
 
@@ -73,7 +73,7 @@ GateInMonitoring.prototype.registerHandler = function() {
  * @param reqMethod - GET/POST/PUT...
  * @return XMLHttpRequest object
  */
-GateInMonitoring.prototype.makeRequest = function(reqUrl, callback, sendData, returnType, reqMethod) {	
+ServicesManagement.prototype.makeRequest = function(reqUrl, callback, sendData, returnType, reqMethod) {	
 	if (reqUrl == "") {
 		return;
 	}
