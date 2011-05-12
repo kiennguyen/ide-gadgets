@@ -101,6 +101,18 @@ ServicesManagement.prototype.renderMethodDetail = function(method) {
 	eXo.gadget.ServicesManagement.resetHeight();
 };
 
+ServicesManagement.prototype.renderServiceDetailForCanvas = function(data) {
+	if (data) {
+		if(data.methods) {
+			eXo.gadget.ServicesManagement.renderMethodsForCanvas(data);
+		}
+		
+		if(data.properties) {
+			eXo.gadget.ServicesManagement.renderPropertiesForCanvas(data);
+		}
+	}
+}
+
 ServicesManagement.prototype.renderMethodsForCanvas = function(methodData) {
 	if (!methodData || !methodData.methods) {
 		return;
@@ -127,13 +139,42 @@ ServicesManagement.prototype.renderMethodsForCanvas = function(methodData) {
 					+ util.escapeString(method.parameters[j].name) + "'>" + "</div>";
 		}
 		methodForCanvas += "</form></td>" + "<td>"
-				+ "<div class='ActionButton GadgetStyle FL'>"
+				+ "<div class='MethodActionButton GadgetStyle FL'>"
 				+ "<div class='ButtonLeft'>" + "<div class='ButtonRight'>"
 				+ "<div class='ButtonMiddle'>" + "<a href='#'>Run</a>" + "</div>"
 				+ "</div>" + "</div>" + "</div>" + "</td></tr>";
 
 	}
 	$("#methodsForCanvas").html(methodForCanvas);
+	eXo.gadget.ServicesManagement.resetHeight();
+};
+
+/**
+ * data is not null
+ */
+ServicesManagement.prototype.renderPropertiesForCanvas = function(data) {
+	var props = data.properties;
+	var propertyForCanvas = "";
+	var util = gadgets.util;
+
+	for ( var i = 0; i < props.length; i++) {
+		var prop = props[i];
+		var propName = util.escapeString(prop.name);
+		var propDescription = util.escapeString(prop.description);
+
+		var rowClass = i % 2 == 0 ? "EvenRow" : "OddRow";
+		propertyForCanvas += "<tr class='" + rowClass + "'>"
+				+ "<td><div class='Text propName'>" + propName + "</div></td>"
+				+ "<td><div class='Text propDescription'>" + propDescription + "</div></td>";
+
+		propertyForCanvas += "<td>"
+				+ "<div class='PropertyActionButton GadgetStyle FL'>"
+				+ "<div class='ButtonLeft'>" + "<div class='ButtonRight'>"
+				+ "<div class='ButtonMiddle'>" + "<a href='#'>Get</a>" + "</div>"
+				+ "</div>" + "</div>" + "</div>" + "</td></tr>";
+
+	}
+	$("#propertiesForCanvas").html(propertyForCanvas);
 	eXo.gadget.ServicesManagement.resetHeight();
 };
 

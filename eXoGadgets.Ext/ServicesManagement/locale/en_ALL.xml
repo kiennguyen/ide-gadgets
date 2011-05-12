@@ -29,6 +29,9 @@
   <msg name="name">
   	Name
   </msg>
+  <msg name="description">
+    Description
+  </msg>
   <msg name="method">
   	Method
   </msg>
