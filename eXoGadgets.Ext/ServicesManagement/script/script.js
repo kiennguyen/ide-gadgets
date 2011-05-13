@@ -209,6 +209,7 @@ ServicesManagement.prototype.renderMethodsForCanvas = function(methodData) {
 	for ( var i = 0; i < methods.length; i++) {
 		var method = methods[i];
 		var methodName = util.escapeString(method.name);
+		var methodDescription = util.escapeString(method.description);
 		var reqMethod = util.escapeString(method.method);
 
 		var rowClass = i % 2 == 0 ? "EvenRow" : "OddRow";

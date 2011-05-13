@@ -80,19 +80,19 @@
 					</thead>
 					<tbody>
 						<tr class="EvenRow">
-							<td><div class="Text">Name</div></td>
+							<td><div class="Text">__MSG_name__</div></td>
 							<td><div class="Text" id="methodName"></div></td>
 						</tr>
 						<tr class="OddRow">
-							<td><div class="Text">Description</div></td>
+							<td><div class="Text">__MSG_description__</div></td>
 							<td><div class="Text" id="methodDescription"></div></td>
 						</tr>
 						<tr class="EvenRow">
-							<td><div class="Text">Method</div></td>
+							<td><div class="Text">__MSG_method__</div></td>
 							<td><div class="Text" id="reqMethod"></div></td>
 						</tr>
 						<tr class="OddRow">
-							<td><div class="Text">Parameters</div></td>
+							<td><div class="Text">__MSG_parameters__</div></td>
 							<td id="test">
 							  <div class="SkinID Text" id="parametersTable"></div>
 							</td>
@@ -163,8 +163,8 @@
 				</table> 
 			</div>
 			
+			<div class="TitleGadget ClearFix"><h3>Methods</h3></div>
 			<div class="GadgetGrid GadgetGmCanvas GadgetGmCanvasMessage">
-			    <div class="Title ClearFix"><h3>Methods</h3></div>
 				<table cellspacing="0" class="UIGrid">
 					<thead>
 						<tr>
@@ -180,8 +180,8 @@
 				<!--End UIGrid for methods-->
 			</div>
 			
+			<div class="TitleGadget ClearFix"><h3>Properties</h3></div>
 		    <div class="GadgetGrid ServiceProperties">
-		         <div class="Title ClearFix"><h3>Properties</h3></div>
 		         <table cellspacing="0" class="UIGrid">
 		            <thead>
 		               <tr>
