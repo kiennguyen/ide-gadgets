@@ -179,6 +179,9 @@ ServicesManagement.prototype.renderPropertiesForCanvas = function(data) {
 };
 
 ServicesManagement.prototype.showMinimessage = function(jsonMessage) {
+    var msgObj = document.getElementById("resultMessage");
+    msgObj.innerHTML = "";
+  
 	var parsedObj;
 	try {
 		parsedObj = gadgets.json.parse(jsonMessage);
@@ -190,8 +193,7 @@ ServicesManagement.prototype.showMinimessage = function(jsonMessage) {
 		htmlTable = "Method's executed, return no result";
 	}
 
-	var msg = new gadgets.MiniMessage("ServicesManagement", document
-			.getElementById("resultMessage"));
+	var msg = new gadgets.MiniMessage("ServicesManagement", msgObj);
 	var executeMsg = msg.createDismissibleMessage(htmlTable, function() {
 		window.setTimeout(eXo.gadget.ServicesManagement.resetHeight, 500);
 		return true;
@@ -208,6 +210,12 @@ ServicesManagement.prototype.showMinimessage = function(jsonMessage) {
 	});
 	
 	eXo.gadget.ServicesManagement.resetHeight();
+	
+	//animation
+    msgObj.style.width = "0%";
+    msgObj.style.marginLeft = "2in";
+    msgObj.style.marginRight = "2in";
+    $("#resultMessage").animate({width: "100%", marginLeft: "0", marginRight: "0"}, 1000);
 };
 
 ServicesManagement.prototype.objToTable = function(obj) {

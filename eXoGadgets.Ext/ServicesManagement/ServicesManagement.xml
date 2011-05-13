@@ -147,19 +147,19 @@
 				<!--End UIGrid for methods-->
 			</div>
 			
-      <div class="GadgetGrid ServiceProperties">
-         <table cellspacing="0" class="UIGrid">
-            <thead>
-               <tr>
-                  <th class="FieldComponent">__MSG_name__</th>
-                  <th class="FieldComponent">__MSG_description__</th>
-                  <th>__MSG_action__</th>
-               </tr>
-            </thead>
-            <tbody id="propertiesForCanvas"></tbody>
-         </table>
-         <!--End UIGrid for properties-->
-      </div>
+		    <div class="GadgetGrid ServiceProperties">
+		         <table cellspacing="0" class="UIGrid">
+		            <thead>
+		               <tr>
+		                  <th class="FieldComponent">__MSG_name__</th>
+		                  <th class="FieldComponent">__MSG_description__</th>
+		                  <th>__MSG_action__</th>
+		               </tr>
+		            </thead>
+		            <tbody id="propertiesForCanvas"></tbody>
+		         </table>
+		         <!--End UIGrid for properties-->
+		    </div>
 			<div class="BoxFile" id="resultMessage"></div>
 		</div>	
 	  </body>
