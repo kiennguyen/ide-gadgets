@@ -49,6 +49,22 @@ ServicesManagement.prototype.renderServiceSelector = function(services) {
 	servicesSelector.change();
 };
 
+ServicesManagement.prototype.renderServiceDetailForHome = function(data) {
+    if (data) {
+        if(data.description) {
+            $("#ServiceDescription").html(data.description);    
+        }
+        
+        if(data.methods) {
+            eXo.gadget.ServicesManagement.renderMethodSelector(data);
+        }
+        
+        if(data.properties) {
+            eXo.gadget.ServicesManagement.renderPropertySelector(data);
+        }
+    }
+}
+
 ServicesManagement.prototype.renderMethodSelector = function(methodData) {
 	var methodSelector = $("#methodsSelector");
 	var optionsHtml = "";
@@ -70,6 +86,29 @@ ServicesManagement.prototype.renderMethodSelector = function(methodData) {
 	methodSelector.html(optionsHtml);
 	methodSelector.data('methods', methods);
 	methodSelector.change();
+};
+
+ServicesManagement.prototype.renderPropertySelector = function(propertyData) {
+    var propertySelector = $("#propertiesSelector");
+    var optionsHtml = "";
+    var properties = null;
+
+    if (propertyData && propertyData.properties) {
+        properties = propertyData.properties;
+
+        for ( var i = 0; i < properties.length; i++) {
+            optionsHtml += "<option>" + gadgets.util.escapeString(properties[i].name)
+                    + "</option>";
+        }
+    }
+
+    if (optionsHtml == "") {
+        optionsHtml = "<option></option>";
+    }
+
+    propertySelector.html(optionsHtml);
+    propertySelector.data('properties', properties);
+    propertySelector.change();
 };
 
 ServicesManagement.prototype.renderMethodDetail = function(method) {
@@ -101,6 +140,22 @@ ServicesManagement.prototype.renderMethodDetail = function(method) {
 	eXo.gadget.ServicesManagement.resetHeight();
 };
 
+ServicesManagement.prototype.renderPropertyDetail = function(property) {
+    if (!property) {
+        property = {
+            name : "",
+            description : ""
+        };
+    }
+    var util = gadgets.util;
+
+    $("#propertyName").html(util.escapeString(property.name));
+    $("#propertyDescription").html(util.escapeString(property.description));
+    eXo.gadget.ServicesManagement.resetHeight();
+};
+// End Home View
+
+// Start Canvas view
 ServicesManagement.prototype.renderServiceDetailForCanvas = function(data) {
 	if (data) {
         if(data.description) {

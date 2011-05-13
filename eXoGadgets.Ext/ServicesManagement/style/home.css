@@ -1,7 +1,6 @@
 body {
 	font-family: Lucida Sans, Arial, Verdana, sans-serif;
 	margin: 0px;
-	font-size: 12px;
 	color: #626262;
 }
 
@@ -41,34 +40,98 @@ a {
 }
 
 /******* UIGadget ********/
-
 .UIGadget {
-	font-size: 11px;
-	width: 100%;
+    width: 100%;
+}
+
+.Note {
+	background: #fff5f5;
+	color: #f43f3f;
+	padding: 7px 5px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 10px;
 }
 
 .TopGadget {
-	padding: 10px;
+	padding: 10px 0px;
+	text-align: center;
 }
 
-.TopGadget table td {
-	padding: 3px 0px;
+.TopGadget .ServicesBox {
+	width: 220px;
+	margin: 0px auto;
 }
 
-.TopGadget table .Text {
+.TopGadget p {
+	margin: 0px;
+	font-style: italic;
+	text-align: left;
+	padding: 5px 10px;
+	line-height: 14px;
+	background: #f5f5f5;
+	color: #777;
+}
+
+.TopGadget .Text {
 	font-weight: bold;
 	color: #636363;
-	padding-right: 10px;
+	float: left;
+	line-height: 20px;
+	font-size: 12px;
 }
 
-.TopGadget table select {
-	background: #f5f5f5;
+.TopGadget select {
+	background: #f9f9f9;
 	height: 18px;
 	border: 1px solid #cacaca;
-	color: #838383;
+	color: #6086eb;
 	font-size: 12px;
 	-moz-border-radius: 2px;
 	width: 110px;
+	float: left;
+	margin: 0px 5px 0px 10px;
+}
+
+.TopGadget .DesIconHome {
+	background: url(style/images/DesIconHome.gif) no-repeat left top;
+	width: 22px;
+	height: 22px;
+	display: block;
+	float: left;
+}
+
+.TitleGrid .BgTitle {
+	background: #f5f5f5;
+	padding: 5px 10px 0px 10px;
+	float: left;
+}
+
+.TitleGrid h3 {
+	font-weight: bold;
+	color: #555;
+	float: left;
+	line-height: 20px;
+	padding-right: 10px;
+	margin: 0px;
+	font-size: 11px;
+}
+
+.TitleGrid select {
+	background: #f9f9f9;
+	height: 18px;
+	border: 1px solid #cacaca;
+	color: #6086eb;
+	font-size: 12px;
+	-moz-border-radius: 2px;
+	width: 110px;
+	float: left;
+}
+
+.GadgetGrid {
+	background: #f5f5f5;
+	padding: 4px 0px;
+	margin-bottom: 10px;
 }
 
 .GadgetGrid .UIGrid {
@@ -85,18 +148,18 @@ a {
 }
 
 .GadgetGrid .UIGrid th {
-	background: #ebebeb;
-	font-weight: normal;
+	background: #efefef;
 	line-height: 24px;
 	padding: 0 10px;
 	vertical-align: middle;
 	text-align: left;
-	font-weight: bold;
 	border-bottom: 1px solid #fff;
+	color: #777;
+	font-weight: bold;
 }
 
 .GadgetGrid .UIGrid .EvenRow {
-	background: #F5F5F5;
+	background: #f8f8f8;
 }
 
 .GadgetGrid .UIGrid .OddRow {
@@ -109,6 +172,7 @@ a {
 	border-top: 1px solid #ebebeb;
 	line-height: 20px;
 	padding: 4px 10px;
+	color: #888888;
 }
 
 .GadgetGrid .UIGrid .Text {
@@ -132,27 +196,4 @@ a {
 .GadgetGrid .UIGrid .ActionContainer {
 	text-align: center;
 	white-space: nowrap;
-}
-
-/******* Button *******/
-
-.GadgetGrid .GadgetStyle .ButtonLeft {
-	background: url("images/GadgetStyle.gif") no-repeat left top;
-	padding-left: 2px;
-}
-
-.GadgetGrid .GadgetStyle .ButtonRight {
-	background: url("images/GadgetStyle.gif") no-repeat right top;
-	padding-right: 2px;
-}
-
-.GadgetGrid .GadgetStyle .ButtonMiddle {
-	background: url("images/GadgetStyle.gif") repeat-x left -24px;
-	line-height: 24px;
-	padding: 0px 10px;
-}
-
-.GadgetGrid .GadgetStyle .ButtonMiddle a {
-	color: #636363;
-	font-weight: bold;
 }

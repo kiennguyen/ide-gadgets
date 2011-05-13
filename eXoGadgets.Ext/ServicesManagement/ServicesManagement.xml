@@ -56,21 +56,19 @@
 		<body>
 			<div class="UIGadget">
 			  <div class="TopGadget">
-				<table cellspacing="0">
-					<tr>
-						<td><div class="Text">__MSG_services__</div></td>
-						<td>
-							<select id="servicesSelector"></select>							
-						</td>
-					</tr>
-					<tr>
-						<td><div class="Text">__MSG_method__</div></td>
-						<td>
-							<select id="methodsSelector"></select>							
-						</td>
-					</tr>
-				</table> 
-			  </div>
+                <div class="ServicesBox ClearFix">
+                    <div class="Text">__MSG_services__</div>
+                    <select id="servicesSelector"></select>
+                    <a class="DesIconHome"><span></span></a>
+                </div>
+                <p><b>Description:</b> <span id="ServiceDescription">Reload a specified skin</span></p>
+              </div>
+              <div class="TitleGrid ClearFix">
+                <div class="BgTitle ClearFix">
+                    <h3>__MSG_method__</h3>
+                    <select id="methodsSelector"></select>  
+                </div>
+              </div>
 			
 			  <div class="GadgetGrid">
 				<table cellspacing="0" class="UIGrid">
@@ -101,8 +99,38 @@
 						</tr>
 					</tbody>
 				</table> 
-				<!--End UIGrid-->
-			</div>									
+				<!--End methods UIGrid-->
+			  </div>	
+			  
+			  <!-- Start Properties UIGrid -->
+			  <div class="TitleGrid ClearFix">
+                <div class="BgTitle ClearFix">
+                    <h3>Properties</h3>
+                    <select id="propertiesSelector"></select>
+                </div>
+              </div>
+              <div class="GadgetGrid">
+                <table cellspacing="0" class="UIGrid">
+                    <thead>
+                        <tr>
+                            <th class="FieldComponent">__MSG_name__</th>
+                            <th>__MSG_value__</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="EvenRow">
+                            <td><div class="Text">__MSG_name__</div></td>
+                            <td><div class="Text" id="propertyName"></div></td>
+                        </tr>
+                        <tr class="OddRow">
+                            <td><div class="Text">__MSG_description__</div></td>
+                            <td><div class="Text" id="propertyDescription"></div></td>
+                        </tr>
+                    </tbody>
+                </table> 
+                <!--End Properties UIGrid-->
+               </div>		
+            						
 		</div>					
     </body>
 	]]>

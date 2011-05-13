@@ -26,28 +26,45 @@ ServicesManagement.prototype.registerHandler = function() {
 	  
 	  var currView = gadgets.views.getCurrentView().getName();
 	  if (currView == "home") {
-	  	eXo.gadget.ServicesManagement.makeRequest(methodsURL, eXo.gadget.ServicesManagement.renderMethodSelector);
+	  	eXo.gadget.ServicesManagement.makeRequest(methodsURL, eXo.gadget.ServicesManagement.renderServiceDetailForHome);
 	  } else {
 	  	eXo.gadget.ServicesManagement.makeRequest(methodsURL, eXo.gadget.ServicesManagement.renderServiceDetailForCanvas);
 	  }
 	});
 
-	$("#methodsSelector").change(function () {
-	  var methodName = $(this).val();
-	  methodName = gadgets.util.unescapeString(!methodName ? "" : methodName);
+	$("#propertiesSelector").change(function () {
+	  var propertyName = $(this).val();
+	  propertyName = gadgets.util.unescapeString(!propertyName ? "" : propertyName);
 
-	  var methodData = $(this).data('methods');
-	  var method = null;
-	  if (methodData) {
-		  for (var i = 0; i < methodData.length; i++) {
-		  	if (methodData[i].name == methodName) {
-		  		method = methodData[i];
+	  var propertyData = $(this).data('properties');
+	  var property = null;
+	  if (propertyData) {
+		  for (var i = 0; i < propertyData.length; i++) {
+		  	if (propertyData[i].name == propertyName) {
+		  		property = propertyData[i];
 		  	}
 		  }
 	  }
 
-	  eXo.gadget.ServicesManagement.renderMethodDetail(method);
+	  eXo.gadget.ServicesManagement.renderPropertyDetail(property);
 	});
+	
+	$("#methodsSelector").change(function () {
+      var methodName = $(this).val();
+      methodName = gadgets.util.unescapeString(!methodName ? "" : methodName);
+
+      var methodData = $(this).data('methods');
+      var method = null;
+      if (methodData) {
+          for (var i = 0; i < methodData.length; i++) {
+            if (methodData[i].name == methodName) {
+                method = methodData[i];
+            }
+          }
+      }
+
+      eXo.gadget.ServicesManagement.renderMethodDetail(method);
+    });
 	
 	$('.MethodActionButton').live('click', function(event) {
 		event.preventDefault();
