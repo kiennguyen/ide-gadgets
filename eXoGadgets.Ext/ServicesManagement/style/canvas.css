@@ -64,9 +64,10 @@ a {
 	padding: 8px;
 	font-style: italic;
 }
-.TopGadget table .Description span {
+.TopGadget table .Description p {
 	background: url(images/DesIcon.png) no-repeat left top;
 	padding-left: 20px;
+	margin: 0px;
 }
 
 .TopGadget table td {

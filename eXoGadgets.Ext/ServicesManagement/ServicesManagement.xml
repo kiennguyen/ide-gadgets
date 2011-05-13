@@ -129,7 +129,7 @@
 							</td>
 						</tr>
 						<tr>
-                            <td class="Description" colspan="2"><span><b>Description:</b> Reload a specified skin</span></td>
+                            <td class="Description" colspan="2"><p><b>Description: </b><span id="ServiceDescription">There is no description</span></p></td>
                         </tr>
 					</tbody>
 				</table> 

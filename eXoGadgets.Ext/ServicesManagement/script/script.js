@@ -103,6 +103,10 @@ ServicesManagement.prototype.renderMethodDetail = function(method) {
 
 ServicesManagement.prototype.renderServiceDetailForCanvas = function(data) {
 	if (data) {
+        if(data.description) {
+            $("#ServiceDescription").html(data.description);    
+        }
+	    
 		if(data.methods) {
 			eXo.gadget.ServicesManagement.renderMethodsForCanvas(data);
 		}
