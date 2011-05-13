@@ -134,6 +134,7 @@ ServicesManagement.prototype.renderMethodsForCanvas = function(methodData) {
 		var rowClass = i % 2 == 0 ? "EvenRow" : "OddRow";
 		methodForCanvas += "<tr class='" + rowClass + "'>"
 				+ "<td><div class='Text methodName'>" + methodName + "</div></td>"
+				+ "<td><div class='Text methodDescription'>" + methodDescription + "</div></td>"
 				+ "<td><div class='Text reqMethod'>" + reqMethod + "</div></td>"
 				+ "<td><form style='margin-bottom: 0px;'>";
 		for ( var j = 0; j < method.parameters.length; j++) {

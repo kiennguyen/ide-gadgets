@@ -141,6 +141,7 @@
 					<thead>
 						<tr>
 							<th class="FieldComponent">__MSG_name__</th>
+							<th class="FieldComponent">__MSG_description__</th>
 							<th class="FieldComponent FixWidth">__MSG_method__</th>
 							<th class="FieldComponent">__MSG_parameters__</th>
 							<th class="FixWidth">__MSG_action__</th>
