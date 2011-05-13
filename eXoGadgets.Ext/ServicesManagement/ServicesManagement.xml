@@ -128,18 +128,22 @@
 								<select id="servicesSelector"></select>							
 							</td>
 						</tr>
+						<tr>
+                            <td class="Description" colspan="2"><span><b>Description:</b> Reload a specified skin</span></td>
+                        </tr>
 					</tbody>
 				</table> 
 			</div>
 			
 			<div class="GadgetGrid GadgetGmCanvas GadgetGmCanvasMessage">
+			    <div class="Title ClearFix"><h3>Methods</h3></div>
 				<table cellspacing="0" class="UIGrid">
 					<thead>
 						<tr>
 							<th class="FieldComponent">__MSG_name__</th>
-							<th class="FieldComponent">__MSG_method__</th>
+							<th class="FieldComponent FixWidth">__MSG_method__</th>
 							<th class="FieldComponent">__MSG_parameters__</th>
-							<th>__MSG_action__</th>
+							<th class="FixWidth">__MSG_action__</th>
 						</tr>
 					</thead>
 					<tbody id="methodsForCanvas"></tbody>
@@ -148,6 +152,7 @@
 			</div>
 			
 		    <div class="GadgetGrid ServiceProperties">
+		         <div class="Title ClearFix"><h3>Properties</h3></div>
 		         <table cellspacing="0" class="UIGrid">
 		            <thead>
 		               <tr>

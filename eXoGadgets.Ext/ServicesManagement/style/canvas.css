@@ -51,8 +51,26 @@ a {
 	padding: 10px;
 }
 
+.TopGadget table {
+	width: 442px;
+}
+
+.TopGadget table td.Text {
+	width: 105px;
+}
+
+.TopGadget table td.Description {
+	background: #f5f5f5;
+	padding: 8px;
+	font-style: italic;
+}
+.TopGadget table .Description span {
+	background: url(images/DesIcon.png) no-repeat left top;
+	padding-left: 20px;
+}
+
 .TopGadget table td {
-	padding: 3px 0px;
+	padding: 5px 0px;
 }
 
 .TopGadget table .Text {
@@ -71,6 +89,28 @@ a {
 	width: 130px;
 }
 
+.GadgetGrid {
+	padding: 0px 5px 5px 5px;
+}
+
+.GadgetGrid .Title {
+	border-bottom: 2px solid #e0e0e0;
+	margin-bottom: 2px;
+}
+
+.GadgetGrid .Title h3 {
+	background: #e9e9e9;
+	padding: 2px 10px 0px 10px;
+	line-height: 22px;
+	color: #6086eb;
+	font-weight: bold;
+	margin: 0px;
+	font-size: 12px;
+	float: left;
+}
+
+
+
 .GadgetGrid .UIGrid {
 	border: 1px solid #ebebeb;
 	border-collapse: collapse;
@@ -84,18 +124,22 @@ a {
 }
 
 .GadgetGrid .UIGrid th {
-	background: #ebebeb;
+	background: #f1f1f1;
 	font-weight: normal;
 	line-height: 24px;
 	padding: 0 10px;
 	vertical-align: middle;
 	text-align: left;
-	font-weight: bold;
 	border-bottom: 1px solid #fff;
+	color: #555;
+}
+
+.GadgetGrid .UIGrid .FixWidth {
+	width: 10%;
 }
 
 .GadgetGrid .UIGrid .EvenRow {
-	background: #F5F5F5;
+	background: #f8f8f8;
 }
 
 .GadgetGrid .UIGrid .OddRow {
@@ -107,7 +151,8 @@ a {
 	border-right: 1px solid #ebebeb;
 	border-top: 1px solid #ebebeb;
 	line-height: 20px;
-	padding: 4px 10px;
+	padding: 3px 10px;
+	color: #888;
 }
 
 .GadgetGrid .UIGrid .Text {
@@ -121,9 +166,8 @@ a {
 }
 
 .GadgetGrid .UIGrid .SkinID input {
-	height: 17px;
+	height: 15px;
 	border: 1px solid #cacaca;
-	width: 80px;
 	font-size: 10px;
 	color: #848383;
 }
@@ -146,20 +190,25 @@ a {
 }
 
 .GadgetGrid .GadgetStyle .ButtonMiddle {
-	background: url("images/GadgetStyle.gif") repeat-x left -24px;
-	line-height: 24px;
-	padding: 0px 10px;
+	background: url("images/GadgetStyle.gif") repeat-x left -22px;
+	line-height: 22px;
+	padding: 0px 5px;
 }
 
 .GadgetGrid .GadgetStyle .ButtonMiddle a {
-	color: #636363;
+	color: #6086eb;
+	font-size: 11px;
 	font-weight: bold;
+}
+
+.GadgetGrid .GadgetStyle .ButtonMiddle a:hover {
+	color: #626262;
 }
 
 /******* GadgetGmCanvas *******/
 
 .GadgetGrid .UIGrid .SkinID input {
-	width: 75px;
+	width: 125px;
 }
 
 /********* GadgetGmCanvasMessage ************/
