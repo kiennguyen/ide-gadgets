@@ -21,18 +21,43 @@ eXo = {
 };
 
 function ServicesManagement() {
+	this.DEFAULT_SERVICES_URL = "/portal/rest/management";
 }
 
 ServicesManagement.prototype.init = function() {
 	var monitor = eXo.gadget.ServicesManagement;
 	var prefs = new _IG_Prefs();
-	monitor.SERVICES_URL = prefs.getString("servicesURL");
+	var servicesURL = prefs.getString("servicesURL");
+	if (servicesURL && $.trim(servicesURL) != "") {
+		monitor.SERVICES_URL = $.trim(servicesURL);
+	} else {
+		monitor.SERVICES_URL = monitor.DEFAULT_SERVICES_URL;
+	}
+	
+	function getContext(url) {		
+		if (!url) return "";
+		var fslash = url.indexOf("/");
+		var lslash = url.indexOf("/", fslash + 2);
+		var context = url.substring(0, lslash);
+		return context;
+	}
+	
+	if (monitor.SERVICES_URL.indexOf("http://") == 0 || 
+			monitor.SERVICES_URL.indexOf("https://") == 0) {
+		if (getContext(document.location.href) !== getContext(monitor.SERVICES_URL)) {
+			alert(prefs.getMsg("failManage"));
+			return;
+		}
+	}
 	
 	monitor.registerHandler();
 	monitor.makeRequest(monitor.SERVICES_URL, monitor.renderServiceSelector);
 };
 
 ServicesManagement.prototype.renderServiceSelector = function(services) {
+	if (!services || !services.value || services.value.length == 0) {
+		alert(prefs.getMsg("noServices"));		
+	}
 	var servicesSelector = $("#servicesSelector");
 	var optionsHtml = "";
 

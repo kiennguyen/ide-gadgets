@@ -116,7 +116,10 @@ ServicesManagement.prototype.makeRequest = function(reqUrl, callback, sendData, 
 					  type: reqMethod,					  
 					  success: callback,
 					  contentType: "application/x-www-form-urlencoded",
-					  error: function() {},
+					  error: function() {
+						  var prefs = new _IG_Prefs();
+						  alert(prefs.getMsg("badURL"));
+					  },
 					  data: sendData,
 					  dataType: returnType,
 					  beforeSend: function(xhr) {
