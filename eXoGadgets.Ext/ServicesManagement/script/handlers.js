@@ -64,7 +64,7 @@ ServicesManagement.prototype.registerHandler = function() {
 	  var propertyName = $(this).val();
 	  propertyName = gadgets.util.unescapeString(!propertyName ? "" : propertyName);
 
-	  var propertyData = $(this).data('properties');
+	  var propertyData = $(this).data('properties');	
 	  var property = null;
 	  if (propertyData) {
 		  for (var i = 0; i < propertyData.length; i++) {

@@ -56,7 +56,7 @@ ServicesManagement.prototype.init = function() {
 
 ServicesManagement.prototype.renderServiceSelector = function(services) {
 	if (!services || !services.value || services.value.length == 0) {
-		alert(prefs.getMsg("noServices"));		
+		alert(new _IG_Prefs().getMsg("noServices"));		
 	}
 	var servicesSelector = $("#servicesSelector");
 	var optionsHtml = "";
@@ -251,6 +251,9 @@ ServicesManagement.prototype.renderMethodsForCanvas = function(methodData) {
 				+ "</div>" + "</div>" + "</div>" + "</td></tr>";
 
 	}
+	if (methodForCanvas == "") {
+		methodForCanvas = "<td colspan='5' align='center'>" + new _IG_Prefs().getMsg("noMethod") + "</td>";
+	}
 	$("#methodsForCanvas").html(methodForCanvas);	
 };
 
@@ -278,6 +281,9 @@ ServicesManagement.prototype.renderPropertiesForCanvas = function(data) {
 				+ "<div class='ButtonMiddle'>" + "<a href='#'>Get</a>" + "</div>"
 				+ "</div>" + "</div>" + "</div>" + "</td></tr>";
 
+	}
+	if (propertyForCanvas == "") {
+		propertyForCanvas = "<td colspan='3' align='center'>" + new _IG_Prefs().getMsg("noProperty") + "</td>";
 	}
 	$("#propertiesForCanvas").html(propertyForCanvas);	
 };
