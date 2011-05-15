@@ -213,7 +213,7 @@ ServicesManagement.prototype.getContentContainer = function(tab) {
 
 ServicesManagement.prototype.fadeIn = function(target, callback) {
 	$(target).hide();
-	$(target).fadeIn("700", callback);		
+	$(target).fadeIn(700, callback);		
 	eXo.gadget.ServicesManagement.resetHeight();
 };
 
@@ -289,8 +289,9 @@ ServicesManagement.prototype.renderPropertiesForCanvas = function(data) {
 };
 
 ServicesManagement.prototype.showMinimessage = function(jsonMessage) {
-    var msgObj = document.getElementById("resultMessage");
-    msgObj.innerHTML = "";
+    var msgObj = $("#resultMessage")[0];
+    $(msgObj).css("Visibility", "hidden");
+    $(msgObj).html("");
   
 	var parsedObj;
 	try {
@@ -305,7 +306,7 @@ ServicesManagement.prototype.showMinimessage = function(jsonMessage) {
 
 	var msg = new gadgets.MiniMessage("ServicesManagement", msgObj);
 	var executeMsg = msg.createDismissibleMessage(htmlTable, function() {
-		window.setTimeout(eXo.gadget.ServicesManagement.resetHeight, 500);
+		window.setTimeout(function() {gadgets.window.adjustHeight($(".UIGadget").height()); }, 500);					
 		return true;
 	});
 	
@@ -319,7 +320,10 @@ ServicesManagement.prototype.showMinimessage = function(jsonMessage) {
 		$(this.parentNode).attr("style", "vertical-align: top");
 	});
 	
-	eXo.gadget.ServicesManagement.fadeIn($("#resultMessage"));
+	eXo.gadget.ServicesManagement.resetHeight();	
+	$(msgObj).hide();
+	$(msgObj).slideDown(1200);
+	$(msgObj).css("Visibility", "visible");
 };
 
 ServicesManagement.prototype.objToTable = function(obj) {

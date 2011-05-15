@@ -55,7 +55,9 @@ ServicesManagement.prototype.registerHandler = function() {
 		eXo.gadget.ServicesManagement.fadeIn($(".DescriptionBox")[0], function() {
 			var desBox = this; 
 			window.setTimeout(function() {
-				$(desBox).fadeOut("2000");
+				$(desBox).fadeOut(2000, function() {
+					eXo.gadget.ServicesManagement.resetHeight();
+				});
 			}, 5000);
 		});
 	});
