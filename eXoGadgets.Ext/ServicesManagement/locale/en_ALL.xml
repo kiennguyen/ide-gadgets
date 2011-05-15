@@ -32,6 +32,9 @@
   <msg name="description">
     Description
   </msg>
+  <msg name="noDescription">
+    No description
+  </msg>
   <msg name="method">
   	Method
   </msg>

@@ -78,6 +78,8 @@ ServicesManagement.prototype.renderServiceDetailForHome = function(data) {
     if (data) {
         if(data.description) {
             $("#ServiceDescription").html(data.description);    
+        } else {
+        	$("#ServiceDescription").html(new _IG_Prefs().getMsg("noDescription"));
         }
         
         if(data.methods) {
@@ -148,7 +150,7 @@ ServicesManagement.prototype.renderMethodDetail = function(method) {
 	var util = gadgets.util;
 
 	$("#methodName").html(util.escapeString(method.name));
-	$("#methodDescription").html(util.escapeString(method.description));
+	$("#methodDescription").html(util.escapeString(method.description ? method.description : ""));
 	$("#reqMethod").html(util.escapeString(method.method));
 
 	var paramTable = "<table>";
@@ -175,7 +177,7 @@ ServicesManagement.prototype.renderPropertyDetail = function(property) {
     var util = gadgets.util;
 
     $("#propertyName").html(util.escapeString(property.name));
-    $("#propertyDescription").html(util.escapeString(property.description));
+    $("#propertyDescription").html(util.escapeString(property.description ? property.description : ""));
     eXo.gadget.ServicesManagement.resetHeight();
 };
 // End Home View
@@ -185,6 +187,8 @@ ServicesManagement.prototype.renderServiceDetailForCanvas = function(data) {
 	if (data) {				
         if(data.description) {
             $("#ServiceDescription").html(data.description);    
+        } else {
+        	$("#ServiceDescription").html(new _IG_Prefs().getMsg("noDescription"));
         }
 	    
 		if(data.methods) {
@@ -225,7 +229,7 @@ ServicesManagement.prototype.renderMethodsForCanvas = function(methodData) {
 	for ( var i = 0; i < methods.length; i++) {
 		var method = methods[i];
 		var methodName = util.escapeString(method.name);
-		var methodDescription = util.escapeString(method.description);
+		var methodDescription = util.escapeString(method.description ? method.description : "");
 		var reqMethod = util.escapeString(method.method);
 
 		var rowClass = i % 2 == 0 ? "EvenRow" : "OddRow";
@@ -261,7 +265,7 @@ ServicesManagement.prototype.renderPropertiesForCanvas = function(data) {
 	for ( var i = 0; i < props.length; i++) {
 		var prop = props[i];
 		var propName = util.escapeString(prop.name);
-		var propDescription = util.escapeString(prop.description);
+		var propDescription = util.escapeString(prop.description ? prop.description : "");
 
 		var rowClass = i % 2 == 0 ? "EvenRow" : "OddRow";
 		propertyForCanvas += "<tr class='" + rowClass + "'>"
