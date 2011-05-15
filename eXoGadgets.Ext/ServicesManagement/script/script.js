@@ -252,7 +252,7 @@ ServicesManagement.prototype.renderMethodsForCanvas = function(methodData) {
 
 	}
 	if (methodForCanvas == "") {
-		methodForCanvas = "<td colspan='5' align='center'>" + new _IG_Prefs().getMsg("noMethod") + "</td>";
+		methodForCanvas = "<tr class='EventRow'><td colspan='5' align='center'><div class='Text'>" + new _IG_Prefs().getMsg("noMethod") + "</div></td></tr>";
 	}
 	$("#methodsForCanvas").html(methodForCanvas);	
 };
@@ -283,7 +283,7 @@ ServicesManagement.prototype.renderPropertiesForCanvas = function(data) {
 
 	}
 	if (propertyForCanvas == "") {
-		propertyForCanvas = "<td colspan='3' align='center'>" + new _IG_Prefs().getMsg("noProperty") + "</td>";
+		propertyForCanvas = "<tr class='EvenRow'><td colspan='3' align='center'><div class='Text'>" + new _IG_Prefs().getMsg("noProperty") + "</div></td></tr>";
 	}
 	$("#propertiesForCanvas").html(propertyForCanvas);	
 };
