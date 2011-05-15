@@ -32,6 +32,34 @@ ServicesManagement.prototype.registerHandler = function() {
 	  }
 	});
 
+	$(".Tab").click(function () {
+		var selectedTab = $(".TabSelected")[0];			
+		if (this == selectedTab) {
+			return;
+		}
+
+		$(selectedTab).removeClass("TabSelected");
+		$(this).addClass("TabSelected");
+		
+		var selectedContent = eXo.gadget.ServicesManagement.getContentContainer(selectedTab);
+		var content = eXo.gadget.ServicesManagement.getContentContainer(this);
+		
+		$(selectedContent).removeClass("ContentSelected");
+		$(selectedContent).hide();
+		eXo.gadget.ServicesManagement.fadeIn(content, function() {
+			$(this).addClass("ContentSelected");
+		});		
+	});
+	
+	$(".DesIconHome").click(function () {
+		eXo.gadget.ServicesManagement.fadeIn($(".DescriptionBox")[0], function() {
+			var desBox = this; 
+			window.setTimeout(function() {
+				$(desBox).fadeOut("2000");
+			}, 5000);
+		});
+	});
+	
 	$("#propertiesSelector").change(function () {
 	  var propertyName = $(this).val();
 	  propertyName = gadgets.util.unescapeString(!propertyName ? "" : propertyName);

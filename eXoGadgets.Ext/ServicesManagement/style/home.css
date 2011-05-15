@@ -99,6 +99,11 @@ a {
 	height: 22px;
 	display: block;
 	float: left;
+	cursor: pointer;
+}
+
+.DescriptionBox {
+	display: none;
 }
 
 .TitleGrid .BgTitle {

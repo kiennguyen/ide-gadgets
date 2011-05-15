@@ -91,11 +91,11 @@ a {
 }
 
 .TitleGadget {
-	padding: 0px 5px;
+	padding: 0px 5px;		
 }
 
-.TitleGadget h3 {
-	background: #f5f5f5;
+.TitleGadget div {
+	background: #fff;
 	padding: 4px 10px 0px 10px;
 	line-height: 22px;
 	color: #555;
@@ -103,6 +103,12 @@ a {
 	margin: 0px;
 	font-size: 12px;
 	float: left;
+	cursor: pointer; 
+}
+
+.TitleGadget .TabSelected {
+	background: #f5f5f5;
+	color: #6086eb;
 }
 
 .GadgetGrid {
@@ -215,11 +221,16 @@ a {
 
 .GadgetGmCanvasMessage {
 	margin-bottom: 20px;
+	display: none;
 }
 
 .GadgetGmCanvasMessage .UIGrid .SkinID input {
 	width: 130px;
 }
+
+.ContentSelected {
+	display: block;
+}	
 
 /********* BoxFile ************/
 .BoxFile {

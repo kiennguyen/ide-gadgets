@@ -24,7 +24,7 @@ function ServicesManagement() {
 	this.DEFAULT_SERVICES_URL = "/portal/rest/management";
 }
 
-ServicesManagement.prototype.init = function() {
+ServicesManagement.prototype.init = function() { 
 	var monitor = eXo.gadget.ServicesManagement;
 	var prefs = new _IG_Prefs();
 	var servicesURL = prefs.getString("servicesURL");
@@ -88,7 +88,7 @@ ServicesManagement.prototype.renderServiceDetailForHome = function(data) {
             eXo.gadget.ServicesManagement.renderPropertySelector(data);
         }
     }
-}
+};
 
 ServicesManagement.prototype.renderMethodSelector = function(methodData) {
 	var methodSelector = $("#methodsSelector");
@@ -182,7 +182,7 @@ ServicesManagement.prototype.renderPropertyDetail = function(property) {
 
 // Start Canvas view
 ServicesManagement.prototype.renderServiceDetailForCanvas = function(data) {
-	if (data) {
+	if (data) {				
         if(data.description) {
             $("#ServiceDescription").html(data.description);    
         }
@@ -193,9 +193,25 @@ ServicesManagement.prototype.renderServiceDetailForCanvas = function(data) {
 		
 		if(data.properties) {
 			eXo.gadget.ServicesManagement.renderPropertiesForCanvas(data);
-		}
+		}				
+
+		eXo.gadget.ServicesManagement.fadeIn($(".ContentSelected")[0]);
 	}
-}
+};
+
+ServicesManagement.prototype.getContentContainer = function(tab) {
+	if (tab.id == "MethodsTab") {
+		return $("#ServiceMethods")[0];
+	} else {
+		return  $("#ServiceProperties")[0];
+	}
+};
+
+ServicesManagement.prototype.fadeIn = function(target, callback) {
+	$(target).hide();
+	$(target).fadeIn("700", callback);		
+	eXo.gadget.ServicesManagement.resetHeight();
+};
 
 ServicesManagement.prototype.renderMethodsForCanvas = function(methodData) {
 	if (!methodData || !methodData.methods) {
@@ -231,8 +247,7 @@ ServicesManagement.prototype.renderMethodsForCanvas = function(methodData) {
 				+ "</div>" + "</div>" + "</div>" + "</td></tr>";
 
 	}
-	$("#methodsForCanvas").html(methodForCanvas);
-	eXo.gadget.ServicesManagement.resetHeight();
+	$("#methodsForCanvas").html(methodForCanvas);	
 };
 
 /**
@@ -260,8 +275,7 @@ ServicesManagement.prototype.renderPropertiesForCanvas = function(data) {
 				+ "</div>" + "</div>" + "</div>" + "</td></tr>";
 
 	}
-	$("#propertiesForCanvas").html(propertyForCanvas);
-	eXo.gadget.ServicesManagement.resetHeight();
+	$("#propertiesForCanvas").html(propertyForCanvas);	
 };
 
 ServicesManagement.prototype.showMinimessage = function(jsonMessage) {
@@ -295,13 +309,7 @@ ServicesManagement.prototype.showMinimessage = function(jsonMessage) {
 		$(this.parentNode).attr("style", "vertical-align: top");
 	});
 	
-	eXo.gadget.ServicesManagement.resetHeight();
-	
-	//animation
-    msgObj.style.width = "0%";
-    msgObj.style.marginLeft = "2in";
-    msgObj.style.marginRight = "2in";
-    $("#resultMessage").animate({width: "100%", marginLeft: "0", marginRight: "0"}, 1000);
+	eXo.gadget.ServicesManagement.fadeIn($("#resultMessage"));
 };
 
 ServicesManagement.prototype.objToTable = function(obj) {

@@ -61,7 +61,7 @@
                     <select id="servicesSelector"></select>
                     <a class="DesIconHome"><span></span></a>
                 </div>
-                <p><b>Description:</b> <span id="ServiceDescription">Reload a specified skin</span></p>
+                <p class="DescriptionBox"><b>Description:</b> <span id="ServiceDescription">Reload a specified skin</span></p>
               </div>
               <div class="TitleGrid ClearFix">
                 <div class="BgTitle ClearFix">
@@ -131,7 +131,7 @@
                 <!--End Properties UIGrid-->
                </div>		
             						
-		</div>					
+		</div>				
     </body>
 	]]>
    </Content>
@@ -163,8 +163,11 @@
 				</table> 
 			</div>
 			
-			<div class="TitleGadget ClearFix"><h3>Methods</h3></div>
-			<div class="GadgetGrid GadgetGmCanvas GadgetGmCanvasMessage">
+			<div class="TitleGadget ClearFix">
+				<div id="MethodsTab" class="Tab TabSelected">Methods</div>
+				<div id="PropertiesTab" class="Tab">Properties</div>
+			</div>
+			<div id="ServiceMethods" class="GadgetGrid GadgetGmCanvasMessage ContentSelected">
 				<table cellspacing="0" class="UIGrid">
 					<thead>
 						<tr>
@@ -180,8 +183,7 @@
 				<!--End UIGrid for methods-->
 			</div>
 			
-			<div class="TitleGadget ClearFix"><h3>Properties</h3></div>
-		    <div class="GadgetGrid ServiceProperties">
+		    <div id="ServiceProperties" class="GadgetGrid GadgetGmCanvasMessage">
 		         <table cellspacing="0" class="UIGrid">
 		            <thead>
 		               <tr>
