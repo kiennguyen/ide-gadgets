@@ -21,7 +21,7 @@ eXo = {
 };
 
 function ServicesManagement() {
-	this.DEFAULT_SERVICES_URL = "/portal/rest/management";
+	this.DEFAULT_SERVICES_URL = "/rest/management";
 }
 
 ServicesManagement.prototype.init = function() { 

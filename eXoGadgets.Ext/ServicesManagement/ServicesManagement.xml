@@ -43,7 +43,7 @@
       <Require feature="minimessage"/>
       <Require feature="views"/>
    </ModulePrefs>
-   <UserPref name="servicesURL" display_name="__MSG_services_url__" default_value="/portal/rest/management" required="true"/>
+   <UserPref name="servicesURL" display_name="__MSG_services_url__" default_value="/rest/management" required="true"/>
    <Content type="html" view="home">
       <![CDATA[
         <link rel="stylesheet" type="text/css" href="style/home.css"></link>
